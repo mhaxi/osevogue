@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ose Vogue | Book a Fashion Appointment</title>
+<meta name="description" content="Ose Vogue is a clothing line offering custom outfits, styling sessions and fashion consultations. Request your appointment online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fcf9f2;--bg2:#f4ecdc;--ink:#2a2418;--mute:#6b6050;--peach:#d9b45a;--acc:#8f6b1c;--accink:#fff;--line:#e8dcc0;--card:#fffdf8;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17130c;--bg2:#221c10;--ink:#f6efdc;--mute:#c9bc9c;--peach:#d9b45a;--acc:#d9b45a;--accink:#17130c;--line:#3b321f;--card:#1e1810}}
+:root[data-theme="dark"]{--bg:#17130c;--bg2:#221c10;--ink:#f6efdc;--mute:#c9bc9c;--peach:#d9b45a;--acc:#d9b45a;--accink:#17130c;--line:#3b321f;--card:#1e1810}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0}
+h2{font-size:clamp(2rem,5vw,3.2rem)}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:88px 0}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;color:var(--acc);font-weight:600;margin-bottom:14px}
+.lead{color:var(--mute);max-width:560px}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;border:1.5px solid var(--acc);background:var(--acc);color:var(--accink);font:600 .92rem var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:600 1.7rem var(--serif);text-decoration:none;letter-spacing:.02em}.logo span{color:var(--acc)}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;font-size:.92rem}nav a:not(.btn):hover{color:var(--acc)}
+nav .btn{padding:10px 20px}
+#menu{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--ink);font-size:1rem;cursor:pointer}
+@media(max-width:860px){#menu{display:block}nav ul{display:none;position:absolute;left:0;right:0;top:68px;background:var(--bg);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line)}nav ul.open{display:flex}}
+/* placeholder imagery: replace by setting --img on any .ph element (see CONFIG note) */
+.ph{position:relative;overflow:hidden;background:var(--img,none) center/cover,linear-gradient(160deg,var(--a,#f4b998),var(--b,#b5532a));border-radius:18px;min-height:220px}
+.ph svg{position:absolute;left:50%;bottom:-4%;height:92%;transform:translateX(-50%);opacity:.5;fill:var(--c,#2b1b17)}
+.ph[style*="--img"] svg{display:none}
+.ph{--a:#f7efd9!important;--b:#c9a24b!important}.ph:nth-child(even){--a:#efe2bf!important;--b:#a67c24!important}.ph:nth-child(3n){--a:#fbf6e8!important;--b:#d9b45a!important}
+.ph small{position:absolute;left:14px;top:12px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#2b1b17;opacity:.7}
+.hero{padding:0;min-height:calc(100svh - 68px);display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch}
+.hero .copy{display:flex;flex-direction:column;justify-content:center;padding:60px max(22px,calc((100vw - 1160px)/2)) 60px max(22px,calc((100vw - 1160px)/2))}
+.hero h1{font-size:clamp(3rem,8vw,6rem);margin:6px 0 20px}.hero h1 em{color:var(--acc);font-style:italic}
+.hero .ph{border-radius:0;min-height:420px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero .ph{order:-1;min-height:46svh}.hero .copy{padding:40px 22px}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:860px){.two{grid-template-columns:1fr;gap:32px}}
+.alt{background:var(--bg2)}
+.grid{display:grid;gap:22px;margin-top:40px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.col{display:flex;flex-direction:column}.col .ph{min-height:340px;transition:transform .5s}.col:hover .ph{transform:scale(1.02)}
+.col h3{font-size:1.6rem;margin:16px 0 4px}.col p{color:var(--mute);margin:0 0 8px;font-size:.95rem}.col a{font-weight:600;color:var(--acc);text-decoration:none}
+.step,.why{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.step .n{width:44px;height:44px;border-radius:50%;background:var(--peach);color:#2b1b17;display:grid;place-items:center;font:600 1.3rem var(--serif);margin-bottom:14px}
+.step h3,.why h3{font-size:1.45rem;margin-bottom:6px}.step p,.why p{margin:0;color:var(--mute);font-size:.95rem}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px;margin-top:40px}
+.gal .ph{min-height:0;height:100%;border-radius:14px}
+.gal .t{grid-row:span 2}.gal .w{grid-column:span 2}
+@media(max-width:700px){.gal{grid-template-columns:repeat(2,1fr)}}
+.quote{background:var(--card);border:1px dashed var(--acc);border-radius:18px;padding:26px}
+.quote p{font:italic 1.25rem var(--serif);margin:0 0 12px}.quote span{font-size:.85rem;color:var(--mute)}
+form{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.fr{grid-template-columns:1fr}}
+label{display:block;font-size:.85rem;font-weight:600;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:100px;resize:vertical}
+.err{color:#b3261e;font-size:.8rem;min-height:1.1em;margin-top:4px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#ff8a80}}
+input[aria-invalid=true],select[aria-invalid=true]{border-color:#b3261e}
+#ok{display:none;background:var(--bg2);border:1.5px solid var(--acc);border-radius:18px;padding:28px}
+#ok.show{display:block}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font:600 1.4rem var(--serif);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--acc)}details[open] summary::after{content:"–"}
+summary::-webkit-details-marker{display:none}
+details p{color:var(--mute);margin:10px 0 0;max-width:680px}
+footer{background:#2a2418;color:#f6efdc;padding:60px 0 28px}
+footer a{color:#d9b45a;text-decoration:none}footer .logo{color:#f8ebe2}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}@media(max-width:760px){.fg{grid-template-columns:1fr}}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}footer h4{margin:0 0 12px;font-family:var(--serif);font-size:1.2rem}
+.copy-r{border-top:1px solid #4a3530;margin-top:36px;padding-top:20px;font-size:.85rem;opacity:.8}
+.legal{padding:40px 0;font-size:.9rem;color:var(--mute)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.col .ph{transition:none}}
+/* luxury refinement */
+section{padding:120px 0}@media(max-width:700px){section{padding:80px 0}}
+h1,h2,h3{font-weight:500;letter-spacing:.005em}
+h2{font-size:clamp(2.2rem,5.2vw,3.6rem);font-weight:400}
+body{letter-spacing:.01em}
+.logo{font-size:1.4rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+nav a:not(.btn){font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+header{border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.68rem;letter-spacing:.34em;display:flex;align-items:center;gap:14px}
+.eyebrow::after{content:"";width:56px;height:1px;background:var(--acc)}
+.btn{border-radius:0;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;font-weight:600;padding:17px 34px;color:#2a2418;border:1px solid #b8923a;background:linear-gradient(135deg,#b8923a,#ecd596 50%,#b8923a)}
+.btn:hover{filter:brightness(1.07);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--acc)}
+.btn.ghost:hover{background:var(--acc);color:var(--accink)}
+nav .btn{padding:12px 22px}
+.hero h1{font-weight:400;font-size:clamp(3.2rem,8.5vw,6.6rem);letter-spacing:-.01em}
+.hero h1 em{font-weight:400;background:linear-gradient(135deg,#9a7524,#e2c477 50%,#9a7524);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:1.05rem;line-height:1.9}
+.ph,.gal .ph{border-radius:0}
+.ph::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.75);pointer-events:none}
+.hero .ph::after{inset:22px}
+.col h3{font-size:1.75rem;font-weight:400}
+.col a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--acc);align-self:flex-start;padding-bottom:3px}
+.step,.why,.quote,form,#ok{border-radius:0;border:1px solid var(--line);box-shadow:0 1px 0 var(--acc) inset}
+.quote{border-style:solid}
+.step .n{background:none;border:1px solid var(--acc);color:var(--acc);border-radius:50%}
+form{padding:42px}
+label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--mute)}
+input,select,textarea{border-radius:0;border:0;border-bottom:1px solid var(--acc);background:transparent;padding:12px 2px}
+input:focus,select:focus,textarea:focus{outline:0;border-bottom-width:2px}
+summary{font-weight:400;font-size:1.55rem}
+.gal{gap:10px}
+.quote p{font-size:1.4rem}
+footer{border-top:2px solid #b8923a}
+footer h4{letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;color:#d9b45a;font-family:var(--sans)}
+.copy-r{border-color:#4a3f26}
+</style>
+</head>
+<body>
+<!-- ===== EDIT ME: all brand details live here ===== -->
+<script>
+const CONFIG={brand:"Ose Vogue",whatsapp:"2348165311383",email:"dobryose@gmail.com",instagram:"",location:"Add your location here",hours:"Add your opening hours here"};
+</script>
+
+<header><div class="wrap nav">
+<a class="logo" href="#home">Ose <span>Vogue</span></a>
+<nav aria-label="Main"><button id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+<ul id="links"><li><a href="#home">Home</a></li><li><a href="#collections">Collections</a></li><li><a href="#about">About Us</a></li><li><a href="#booking">Booking</a></li><li><a href="#contact">Contact</a></li><li><a class="btn" href="#booking">Book an Appointment</a></li></ul></nav>
+</div></header>
+
+<main>
+<section class="hero" id="home">
+<div class="copy">
+<div class="eyebrow">Ose Vogue · Clothing Line</div>
+<h1>Your Style.<br><em>Your Statement.</em></h1>
+<p class="lead">Thoughtfully designed clothing and personal fashion consultations, made around you. Book a visit and let’s create something you’ll love to wear.</p>
+<div class="cta"><a class="btn" href="#booking">Book an Appointment</a><a class="btn ghost" href="#collections">Explore Our Collections</a></div>
+</div>
+<div class="ph" role="img" aria-label="Fashion model wearing an Ose Vogue outfit (placeholder)" data-slot="hero" style="--a:#f9d3bb;--b:#c8643c"><small>Hero photo placeholder</small>
+<svg viewBox="0 0 100 200" aria-hidden="true"><circle cx="50" cy="20" r="13"/><path d="M36 38h28l14 60-10 4-6-28 4 100H62L50 110 38 174H34l4-100-6 28-10-4z"/></svg></div>
+</section>
+
+<section id="about"><div class="wrap two">
+<div class="ph rv" role="img" aria-label="Brand image placeholder" data-slot="about" style="--a:#f4b998;--b:#8a3d1d;min-height:480px"><small>Brand photo</small><svg viewBox="0 0 100 200" aria-hidden="true"><circle cx="50" cy="20" r="13"/><path d="M36 38h28l14 60-10 4-6-28 4 100H62L50 110 38 174H34l4-100-6 28-10-4z"/></svg></div>
+<div class="rv"><div class="eyebrow">About Ose Vogue</div><h2>Fashion that fits who you are.</h2>
+<p class="lead">[Edit: write your brand story here in a sentence or two.] Ose Vogue is a clothing line built around personal style, careful detail and a service that feels personal.</p>
+<p class="lead"><strong>Our philosophy:</strong> [Edit] Clothing should make you feel confident, comfortable and unmistakably yourself.</p>
+<p style="margin-top:26px"><a class="btn ghost" href="#why">Discover Our Story</a></p></div>
+</div></section>
+
+<section id="collections" class="alt"><div class="wrap">
+<div class="eyebrow">Collections</div><h2>Pieces made to be noticed.</h2>
+<div class="grid g4">
+<article class="col rv"><div class="ph" data-slot="c1" style="--a:#f9d3bb;--b:#d4784f"><small>Photo</small><svg viewBox="0 0 100 200" aria-hidden="true"><circle cx="50" cy="20" r="13"/><path d="M36 38h28l14 60-10 4-6-28 4 100H62L50 110 38 174H34l4-100-6 28-10-4z"/></svg></div><h3>Women’s Fashion</h3><p>Elegant everyday and statement pieces.</p><a href="#booking" data-type="Personal Styling Session">Book a styling session →</a></article>
+<article class="col rv"><div class="ph" data-slot="c2" style="--a:#e8c3a8;--b:#5c3326"><small>Photo</small><svg viewBox="0 0 100 200" aria-hidden="true"><circle cx="50" cy="20" r="13"/><path d="M36 38h28l14 60-10 4-6-28 4 100H62L50 110 38 174H34l4-100-6 28-10-4z"/></svg></div><h3>Men’s Fashion</h3><p>Sharp, well-fitted looks with character.</p><a href="#booking" data-type="Personal Styling Session">Book a styling session →</a></article>
+<article class="col rv"><div class="ph" data-slot="c3" style="--a:#fbe0cf;--b:#b5532a"><small>Photo</small><svg viewBox="0 0 100 200" aria-hidden="true"><circle cx="50" cy="20" r="13"/><path d="M36 38h28l14 60-10 4-6-28 4 100H62L50 110 38 174H34l4-100-6 28-10-4z"/></svg></div><h3>Custom-Made Outfits</h3><p>Designed and measured just for you.</p><a href="#booking" data-type="Custom Outfit Consultation">Request a consultation →</a></article>
+<article class="col rv"><div class="ph" data-slot="c4" style="--a:#f4b998;--b:#7a2f17"><small>Photo</small><svg viewBox="0 0 100 200" aria-hidden="true"><circle cx="50" cy="20" r="13"/><path d="M36 38h28l14 60-10 4-6-28 4 100H62L50 110 38 174H34l4-100-6 28-10-4z"/></svg></div><h3>Special Occasion</h3><p>Weddings, events and milestone moments.</p><a href="#booking" data-type="Bridal or Special Occasion Consultation">Plan your look →</a></article>
+</div></div></section>
+
+<section id="booking"><div class="wrap two" style="align-items:start">
+<div class="rv"><div class="eyebrow">Booking</div><h2>Reserve your appointment.</h2>
+<p class="lead">Tell us what you need and when. We’ll confirm availability with you directly.</p>
+<div id="ok" role="status" tabindex="-1"><h3 style="font-size:1.8rem;margin-bottom:8px">Almost done, one tap left.</h3><p id="okmsg" style="color:var(--mute)"></p><p><a class="btn" id="wa" target="_blank" rel="noopener">Send on WhatsApp</a> <a class="btn ghost" id="mail">Send by email</a></p></div></div>
+<form id="f" novalidate class="rv" aria-label="Booking request">
+<div class="fr"><div><label for="name">Full name</label><input id="name" required autocomplete="name"><div class="err" data-for="name"></div></div>
+<div><label for="phone">WhatsApp / phone</label><input id="phone" type="tel" required autocomplete="tel" placeholder="e.g. 0816 531 1383"><div class="err" data-for="phone"></div></div></div>
+<label for="email">Email address</label><input id="email" type="email" required autocomplete="email"><div class="err" data-for="email"></div>
+<div class="fr"><div><label for="date">Preferred date</label><input id="date" type="date" required><div class="err" data-for="date"></div></div>
+<div><label for="time">Preferred time</label><input id="time" type="time" required><div class="err" data-for="time"></div></div></div>
+<div class="fr"><div><label for="type">Type of appointment</label><select id="type" required><option value="">Choose one</option><option>Custom Outfit Consultation</option><option>Personal Styling Session</option><option>Measurement Appointment</option><option>Bridal or Special Occasion Consultation</option><option>General Fashion Enquiry</option></select><div class="err" data-for="type"></div></div>
+<div><label for="cat">Outfit category</label><select id="cat"><option value="">Not sure yet</option><option>Women’s Fashion</option><option>Men’s Fashion</option><option>Custom-Made</option><option>Special Occasion</option><option>Accessories</option></select></div></div>
+<label for="notes">Notes or special requests</label><textarea id="notes"></textarea>
+<p style="margin:20px 0 0"><button class="btn" type="submit">Request a Booking</button></p>
+<p style="font-size:.8rem;color:var(--mute);margin:12px 0 0">Your details are only used to arrange your appointment.</p>
+</form></div></section>
+
+<section class="alt"><div class="wrap"><div class="eyebrow">How it works</div><h2>Three simple steps.</h2>
+<div class="grid g3">
+<div class="step rv"><div class="n">1</div><h3>Choose Your Service</h3><p>Select the type of appointment you need.</p></div>
+<div class="step rv"><div class="n">2</div><h3>Submit Your Request</h3><p>Enter your details and preferred date.</p></div>
+<div class="step rv"><div class="n">3</div><h3>Receive Confirmation</h3><p>We confirm the appointment and share any instructions.</p></div>
+</div></div></section>
+
+<section id="why"><div class="wrap"><div class="eyebrow">Why choose us</div><h2>Fashion with a personal touch.</h2>
+<div class="grid g3">
+<div class="why rv"><h3>Personalized service</h3><p>[Edit] Every consultation is built around you.</p></div>
+<div class="why rv"><h3>Attention to detail</h3><p>[Edit] From fit to finishing, details matter.</p></div>
+<div class="why rv"><h3>Thoughtful styling</h3><p>[Edit] Guidance that suits your taste and occasion.</p></div>
+</div></div></section>
+
+<section class="alt"><div class="wrap"><div class="eyebrow">Gallery</div><h2>The look book.</h2>
+<div class="gal">
+<div class="ph t" data-slot="g1" style="--a:#f9d3bb;--b:#c8643c"></div><div class="ph w" data-slot="g2" style="--a:#e8c3a8;--b:#7a2f17"></div>
+<div class="ph" data-slot="g3" style="--a:#fbe0cf;--b:#d4784f"></div><div class="ph" data-slot="g4" style="--a:#f4b998;--b:#5c3326"></div>
+<div class="ph w" data-slot="g5" style="--a:#f9d3bb;--b:#8a3d1d"></div><div class="ph" data-slot="g6" style="--a:#e8c3a8;--b:#b5532a"></div>
+</div>
+<p style="margin-top:28px"><a class="btn ghost" id="ig" href="#contact">See more on Instagram</a></p></div></section>
+
+<section><div class="wrap"><div class="eyebrow">Testimonials</div><h2>Kind words.</h2>
+<div class="grid g3">
+<div class="quote"><p>[Placeholder: add a real customer comment here.]</p><span>Customer name (placeholder)</span></div>
+<div class="quote"><p>[Placeholder: add a real customer comment here.]</p><span>Customer name (placeholder)</span></div>
+</div></div></section>
+
+<section class="alt"><div class="wrap" style="max-width:820px"><div class="eyebrow">FAQ</div><h2>Good to know.</h2>
+<details><summary>How do I book an appointment?</summary><p>Fill in the booking form above and send your request on WhatsApp or by email. We’ll reply to confirm.</p></details>
+<details><summary>Can I request a custom outfit?</summary><p>Yes. Choose “Custom Outfit Consultation” and tell us about your idea in the notes.</p></details>
+<details><summary>Can I reschedule my appointment?</summary><p>[Edit] Message us on WhatsApp as early as you can and we’ll find a new time.</p></details>
+<details><summary>What should I bring to a consultation?</summary><p>[Edit] Inspiration photos, preferred fabrics or colors, and the occasion date if there is one.</p></details>
+<details><summary>How will my appointment be confirmed?</summary><p>We’ll confirm by WhatsApp or email once we’ve checked availability.</p></details>
+<details><summary>How can I contact the brand?</summary><p>Use the WhatsApp or email details in the contact section below.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="eyebrow">Contact</div><h2>Let’s talk style.</h2>
+<div class="grid g3" style="margin-top:30px">
+<div class="why"><h3>WhatsApp</h3><p><a id="cwa" target="_blank" rel="noopener">Chat with us</a></p></div>
+<div class="why"><h3>Email</h3><p><a id="cem"></a></p></div>
+<div class="why"><h3>Visit</h3><p id="cloc"></p><p id="chrs"></p><p><a id="cig" target="_blank" rel="noopener" hidden>Instagram</a></p></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap"><div class="fg">
+<div><a class="logo" href="#home">Ose <span>Vogue</span></a><p style="opacity:.8;max-width:340px">A clothing line for people who dress with intention. Book a consultation and make it yours.</p></div>
+<div><h4>Explore</h4><ul><li><a href="#collections">Collections</a></li><li><a href="#about">About Us</a></li><li><a href="#booking">Book an Appointment</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h4>Get in touch</h4><ul><li><a id="fwa" target="_blank" rel="noopener">WhatsApp</a></li><li><a id="fem"></a></li><li><a href="#privacy">Privacy Policy</a></li><li><a href="#terms">Terms of Use</a></li></ul></div>
+</div><div class="copy-r">© <span id="yr"></span> Ose Vogue. All rights reserved.</div></div></footer>
+<div class="wrap legal"><p id="privacy"><strong>Privacy Policy (placeholder):</strong> Details you submit are used only to arrange your appointment and are not sold or shared. Replace with your own policy.</p><p id="terms"><strong>Terms of Use (placeholder):</strong> Appointment requests are not confirmed until Ose Vogue replies. Replace with your own terms.</p></div>
+
+<script>
+const $=s=>document.querySelector(s),wa=CONFIG.whatsapp;
+const waLink=t=>"https://wa.me/"+wa+(t?"?text="+encodeURIComponent(t):"");
+$("#cwa").href=$("#fwa").href=waLink("Hello Ose Vogue, I’d like to make an enquiry.");
+$("#cem").href=$("#fem").href="mailto:"+CONFIG.email;$("#cem").textContent=$("#fem").textContent=CONFIG.email;
+$("#cloc").textContent=CONFIG.location;$("#chrs").textContent=CONFIG.hours;$("#yr").textContent=new Date().getFullYear();
+if(CONFIG.instagram){$("#ig").href=$("#cig").href=CONFIG.instagram;$("#cig").hidden=false}
+$("#menu").onclick=e=>{const o=$("#links").classList.toggle("open");e.target.setAttribute("aria-expanded",o)};
+$("#links").onclick=e=>{if(e.target.tagName==="A")$("#links").classList.remove("open")};
+document.querySelectorAll(".col a").forEach(a=>a.onclick=()=>{$("#type").value=a.dataset.type});
+const d=new Date();$("#date").min=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const rules={name:v=>v.trim().length>=2||"Please enter your full name.",
+phone:v=>/^\+?[\d\s()-]{7,16}$/.test(v.trim())||"Enter a valid phone or WhatsApp number.",
+email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())||"Enter a valid email address.",
+date:v=>(v&&v>=$("#date").min)||"Choose today or a future date.",time:v=>!!v||"Choose a preferred time.",type:v=>!!v||"Choose an appointment type."};
+$("#f").onsubmit=e=>{e.preventDefault();let bad=null;
+for(const k in rules){const el=$("#"+k),r=rules[k](el.value),m=document.querySelector('[data-for="'+k+'"]');
+m.textContent=r===true?"":r;el.setAttribute("aria-invalid",r!==true);if(r!==true&&!bad)bad=el}
+if(bad){bad.focus();return}
+const g=k=>$("#"+k).value.trim();
+const msg="Hello Ose Vogue, I’d like to request a booking.\nName: "+g("name")+"\nPhone: "+g("phone")+"\nEmail: "+g("email")+"\nDate: "+g("date")+" at "+g("time")+"\nAppointment: "+g("type")+"\nCategory: "+(g("cat")||"Not sure")+"\nNotes: "+(g("notes")||"None");
+$("#wa").href=waLink(msg);$("#mail").href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent("Booking request: "+g("type"))+"&body="+encodeURIComponent(msg);
+$("#okmsg").textContent="Your request is ready. It is only received once you send it, so tap a button below. We’ll then confirm availability with you.";
+$("#ok").classList.add("show");$("#ok").focus();};
+const io="IntersectionObserver"in window?new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12}):null;
+document.querySelectorAll(".rv").forEach(el=>io?io.observe(el):el.classList.add("in"));
+</script>
+</body>
+</html>
